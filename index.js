@@ -1,10 +1,14 @@
 //importo express
 const express = require ('express');
+//importo cors che permette a qualsiasi server di accedere alle risorse della mia applicazione
+const cors = require('cors');
 //importo il file scraper.js
 const scraper = require('./scraper');
 
 //creo l'app express
 const app = express();
+
+app.use(cors());
 
 //Percorso di base localhost:3000
 app.get('/', (req, res) => {
